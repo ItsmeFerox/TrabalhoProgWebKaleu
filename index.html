@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+/* Fonte 1 */
+@font-face {
+  font-family: 'Formula1-Bold';
+  src: url('Formula1-Bold-4.ttf') format('truetype');
+}
+/* Fonte 2 */
+@font-face {
+  font-family: 'Formula1-Wide';
+  src: url('Formula1-Wide.ttf') format('truetype');
+}
+/* Fonte 3 */
+@font-face {
+  font-family: 'Formula1-Regular';
+  src: url('Formula1-Regular-1.ttf') format('truetype');
+}
+.bloco-decorativo { /* Aquela barra preta que fica embaixo no cabeçalho */
+  background-color: black;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0px -90px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+  .bloco-decorativo2 { /* a barra preta que fica embaixo de oq eu fiz na semana */
+  background-color: black;
+  border-radius: 12px;
+  padding: 350px;
+  margin: 80px -90px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+  .bloco-decorativo3 { /* barra do "sobre mim" */
+  background-color: black;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 80px -900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  top: -500px;
+  z-index: -1;
+}
+  .bloco-decorativo4 { /* barro do "portifolio" */
+  background-color: black;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 80px -90px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  top: 310px;
+  z-index: 1;
+}
+  .bloco-decorativo5 { /* barra do "contato" */
+  background-color: black;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 80px -90px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  top: 985px;
+  z-index: 1;
+}
+.linkfigma {
+ color: #F7F4F1;
+ font-family:'Formula1-Regular';
+ position:relative;
+ top: 250px;
+ left: 50px;
+font-size: 35px;
+}
+.linkdados {
+ color: #F7F4F1;
+ font-family:'Formula1-Regular';
+ position:absolute;
+ top: 2650px;
+ left: 50px;
+font-size: 35px;
+}
+.linklogica {
+ color: #F7F4F1;
+ font-family:'Formula1-Regular';
+ position:absolute;
+ top: 2750px;
+ left: 50px;
+font-size: 35px;
+}
+.linklogica:hover {
+    color: #747474;
+}
+.linkfigma:hover {
+    color: #747474;
+}
+.linkdados:hover {
+    color: #747474;
+}
+.faixa { /* texto que fica passando */
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-family:'Formula1-Regular';
+  top: 80px;
+  color: #F7F4F1;
+  font-size: 10px;
+}
+
+.faixa h1 {
+  display: inline-block;
+  padding-left: 100%;
+  animation: deslizar 10s linear infinite;
+}
+
+@keyframes deslizar { /* animação do texto passando */
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }}
+
+.botao-sobremim {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #E10600;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Formula1-Bold';
+  transition: background-color 0.3s;
+  top: 25px;
+  left: 350px;
+}
+
+.botao-sobremim:hover {
+  background-color: #b00000;
+}
+.botao-portifolio {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #E10600;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Formula1-Bold';
+  transition: background-color 0.3s;
+  top: 25px;
+  left: 550px;
+}
+
+.botao-portifolio:hover {
+  background-color: #b00000;
+}
+.botao-contato {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #E10600;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Formula1-Bold';
+  transition: background-color 0.3s;
+  top: 25px;
+  left: 750px;
+}
+
+.botao-contato:hover {
+  background-color: #b00000;
+}
+.botao-topo { 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #E10600;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Formula1-Bold';
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.botao-topo:hover {
+  background-color: #b00000;
+}
+.logo { /* Começo das animação ao abrir a página */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: surgir 1s ease-out forwards;
+}
+
+@keyframes surgir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.botao-sobremim {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: surgir 1s ease-out forwards;
+    overflow: hidden;
+  position: relative;
+}
+
+@keyframes surgir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.botao-portifolio {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: surgir 1s ease-out forwards;
+    overflow: hidden;
+  position: relative;
+}
+
+@keyframes surgir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.botao-contato {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: surgir 1s ease-out forwards;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes surgir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.loaded {
+  opacity: 1; /* fim das animações ao abrir a página */
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1</title>
+    <style>
+        header {
+            background-color: #15151E;
+            border: #202020;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0px -90px;
+            padding-bottom: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="background-color: #15151E; margin: 0; padding: 0; overflow-x: hidden;">
+    <button onclick="voltarAoTopo()" class="botao-topo">Voltar ao topo</button> <!-- botão de voltar pro tempo e o script dele -->
+    <script>
+  function voltarAoTopo() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+<script> //script pras animações começarem só quando o site terminar de carregar
+  window.addEventListener('load', function () {
+    document.body.classList.add('loaded');
+  });
+</script>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+} </style> <!-- começo do cabeçalho -->
+    <header style="background-image: url('grafico.png');background-repeat: no-repeat; position:relative; top: 00px;left: 120px;";>
+        <h1 style ="color: #E10600;font-family: 'Formula1-Wide'; position:absolute;top: 5px;left: 0px;" class="logo">KALEU</h1>
+        <p style ="color: #F7F4F1;font-family: 'Formula1-Bold';opacity: 0.0;">easter-egg</p>
+    </header>
+<button id="botao-sobremim" class="botao-sobremim" style="position:absolute;">SOBRE MIM</button>
+<script>
+  document.getElementById('botao-sobremim').addEventListener('click', function () {
+    document.getElementById('sobremim').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+<button id="botao-portifolio" class="botao-portifolio" style="position:absolute;">PORTIFÓLIO</button>
+<script>
+  document.getElementById('botao-portifolio').addEventListener('click', function () {
+    document.getElementById('portifolio').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+<button id="botao-contato" class="botao-contato" style="position:absolute;">CONTATO</button>
+<script>
+  document.getElementById('botao-contato').addEventListener('click', function () {
+    document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+        <div class="faixa" style="position: absolute;">
+  <h1>Esse texto não tem proposito além de ficar bonitinho e encher linguiça pro meu site ficar mais cheio!</h1>
+</div> <!-- fim do cabeçalho -->
+    <div class="bloco-decorativo"></div>
+    <h1 style ="color: #F7F4F1;font-family: 'Formula1-Bold'; position: absolute;top: 115px;left: 50px; background-color: black; padding-left: 20px; padding-right: 20px; border-radius: 10px;">ACONTECIMENTOS DO DIA</h1>
+<div style="display: inline-block; background-color: black; padding: 5px;padding-right: 1350px; border-radius: 15px;position:relative ;top: 60px; left: 125px;">
+  <img src="ovo.webp" style="display: block; border-radius: 10px; width: 300%;"> <!-- ovo -->
+    <p style ="color: #F7F4F1;font-family: 'Formula1-Bold';position: absolute;top: 0px;left: 975px;font-size: 35px;">HOJE EU COMI UM OVO FRITO!</p>
+    <p style ="color: #F7F4F1;font-family: 'Formula1-Regular';position: absolute;top: 100px;left: 975px;font-size: 15px; max-width: 650px;">Estava bem nhami, nhum nhum, scrumptions, totoso, delicia!!!!<br><br>coloquei oregano, cheiro verde e sal<br><br>dai eu consegui deixar a gema bem molinha<br><br> nossa tava muito bom</p>
+</div> 
+    <div class="bloco-decorativo2"></div> <!-- acontecimentos da semana -->
+        <h1 style ="color: #F7F4F1;font-family: 'Formula1-Bold'; position: absolute;top: 750px;left: 50px;">COISAS QUE EU FIZ DURANTE A SEMANA</h1>
+         <img src="borger.avif" style="position: absolute; top: 825px; left: 10px; object-fit: cover; width: 455px; height: 550px;">
+        <h1 style ="color: #F7F4F1;font-family: 'Formula1-Regular'; position: absolute;top: 1375px;left: 50px;">Comi um Hamburger</h1>
+        <img src="familia.jpg" style="position: absolute; top: 825px; left: 480px; object-fit: cover; width: 455px; height: 550px;">
+        <h1 style ="color: #F7F4F1;font-family: 'Formula1-Regular'; position: absolute;top: 1375px;left: 550px; max-width: 350px; text-align: center;">Sai com a familia</h1>
+        <img src="namorada.jpg" style="position: absolute; top: 825px; left: 955px; object-fit: cover; width: 455px; height: 550px;">
+        <h1 style ="color: #F7F4F1;font-family: 'Formula1-Regular'; position: absolute;top: 1375px;left: 1000px;">Sai com a namorada</h1>
+        <img src="mine.png" style="position: absolute; top: 825px; left: 1430px; object-fit: cover; width: 455px; height: 550px;">
+        <h1 style ="color: #F7F4F1;font-family: 'Formula1-Regular'; position: absolute;top: 1375px;left: 1500px;">Joguei Minecraft</h1>
+
+   <h1 style ="color: #F7F4F1;font-family: 'Formula1-Bold'; position: absolute;top: 1475px;left: 50px; background-color: black; padding-left: 30px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px; border-radius: 10px;z-index: 2;" id="sobremim">SOBRE MIM</h1>
+   <div id="#sobremim" style="position: rela;"></div>
+    <h1 style ="color: #F7F4F1;font-family: 'Formula1-Regular'; position: relative;top: 25px;left: 50px; z-index: 1;max-width: 1750px;">Meu nome é Kaleu, estou com 18 anos<br>No meu tempo livre eu gosto de ficar com minha namorada, jogar vídeogame, editar vídeo, e programar.<br> Desde pequenininho eu gostei de computadores, mexo em pc's desde os meus 4 aninhos<br>Então fazer a faculdade de Analise e Desenvolivmento de Sistemas, ou qualquer coisa relacionada a TI já era de se esperar.<br>Outro grande hobbie meu é carros, tanto é que o design desse site é extremamente inspirado no site da Formula 1<br>E meu filme favorito é Carros (quem diria?)
+    <img src="F1.gif" style="position: absolute; top: -10px; left: -50px; object-fit: cover; width: 1900px; height: 882px;z-index: -1;opacity: 0.4;">
+        <div class="bloco-decorativo3"></div>
+
+           <h1 style ="color: #F7F4F1;font-family: 'Formula1-Bold'; position: absolute;top: 2400px;left: 50px; background-color: black; padding-left: 30px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px; border-radius: 10px;z-index: 2;" id="portifolio">PORTIFÓLIO</h1>
+            <div class="bloco-decorativo4"></div> 
+            <h1 style ="color: #F7F4F1;font-family: 'Formula1-Regular'; position:relative;top: 250px;left: 50px;">Aqui estão alguns dos meus maiores projetos :)</h1>
+            <a href="https://www.figma.com/proto/E2DVJO05uH9ry7WC8ltjO9/CapyBus?node-id=784-932&starting-point-node-id=784%3A932&t=l7089HplXu9XQ8zL-1" class="linkfigma">Protótipo de um aplicativo de Ônibus focado em acessibilidade</a> <!-- href com meus projetinhos -->
+
+            <a href="https://docs.google.com/document/d/19_TRp35C9U_ZhvidXBE4pi9h40QSfAmxdfuyhMWSEoc/edit?usp=sharing" class="linkdados">Trabalho de Banco de Dados que eu fiz recentemente</a>
+
+             <a href="https://docs.google.com/document/d/1kzPSKZJttGLvT_Mo3GxUUQ7NtXhc7snKjUfysh2l6Js/edit?usp=sharing" class="linklogica">Trabalho de Lógica de Programação que eu fiz um tempo atrás</a>
+          
+             <h1 style ="color: #F7F4F1;font-family: 'Formula1-Bold'; position: absolute;top: 3400px;left: 50px; background-color: black; padding-left: 30px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px; border-radius: 10px;z-index: 2;"id="contato">CONTATO</h1>
+            <div class="bloco-decorativo5"></div> 
+
+            <form action="mailto:seuemail@exemplo.com" method="POST" enctype="text/plain" style="max-width: 400px; margin-top: 1000px; margin-left: 50px;"> <!-- forms do contatos (não lembro se funciona, acho que não) -->
+            <input type="text" id="nome" name="nome" placeholder="Nome" required style="width: 440%; padding: 8px; margin-bottom: 10px;font-family:'Formula1-Bold';background-color: #202020;border-radius: 10px;color: #F7F4F1;"><br>
+
+             <input type="email" id="email" name="email" placeholder="E-mail" required style="width: 440%; padding: 8px; margin-bottom: 10px;font-family:'Formula1-Bold';background-color: #202020;border-radius: 10px;color: #F7F4F1;"><br>
+
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Mensagem" required style="width: 440%; padding: 8px; margin-bottom: 10px;font-family:'Formula1-Bold';background-color: #202020;border-radius: 10px;color: #F7F4F1;"></textarea><br>
+
+  <button type="submit" style="padding: 10px 20px; background-color: #E10600; color: white; border: none; border-radius: 5px;font-family:'Formula1-Bold';">Enviar</button>
+</form>
+</body>
+</html>
